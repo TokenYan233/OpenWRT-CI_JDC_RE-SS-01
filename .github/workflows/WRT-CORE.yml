@@ -103,7 +103,7 @@ jobs:
         run: |
           git clone --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
-          cd ./wrt/ && git checkout d5a22fbc2656ac4595877cc5cd7721c07e6e3678
+          cd ./wrt/ && git checkout 30e28764598df88c0a1118214c417703af8aab57
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
@@ -156,22 +156,7 @@ jobs:
         run: |
           cd ./wrt/
 
-          ./scripts/feeds update -a || true
-
-          # 开始魔法回档
-          for dir in feeds/*; do
-          [ ! -d "$dir/.git" ] && continue
-          cd "$dir"
-          # 解除浅克隆获取完整历史
-          git fetch --unshallow 2>/dev/null || true
-          # 获取5月26日的节点并强切
-          target_hash=$(git rev-list -n 1 --before="2026-05-26 23:59" HEAD)
-          [ -n "$target_hash" ] && git checkout "$target_hash"
-          cd ../..
-          done
-          # 重建索引并安装
-          ./scripts/feeds update -i
-
+          ./scripts/feeds update -a
           ./scripts/feeds install -a
 
       - name: Custom Packages
@@ -257,7 +242,7 @@ jobs:
 
             全系带开源硬件加速，别问了！
             (非最新编译,仅用于测试.只选kernel更新前编译)
-            d5a22fbc2656ac4595877cc5cd7721c07e6e3678
+            30e28764598df88c0a1118214c417703af8aab57
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}
