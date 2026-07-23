@@ -86,6 +86,7 @@ UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 UPDATE_VERSION() {
 	local PKG_NAME=$1
 
+	#if [[ "$PKG_NAME" == "sing-box" || "$PKG_NAME" == "sing-box" ]]; then
 	if [[ "$PKG_NAME" == "sing-box" ]]; then
 	echo -e "\n$PKG_NAME is locked, skipping update."
 	return
