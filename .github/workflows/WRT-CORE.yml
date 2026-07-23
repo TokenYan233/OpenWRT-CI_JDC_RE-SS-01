@@ -158,7 +158,7 @@ jobs:
 
           ./scripts/feeds update -a
           
-          # 2. 魔法回档：先取回完整历史，再拨回 5 月 19 日
+          # 2. 魔法回档：先取回完整历史，再拨回 5 月 20 日
           for dir in feeds/*; do
             if [ -d "$dir/.git" ]; then
               echo "========== 正在处理 $dir =========="
@@ -170,11 +170,11 @@ jobs:
                 git fetch --unshallow
               fi
               
-              # 寻找 2026-05-19 23:59 之前的最后一次提交
-              target_hash=$(git rev-list -n 1 --before="2026-05-19 23:59" HEAD)
+              # 寻找 2026-05-20 23:59 之前的最后一次提交
+              target_hash=$(git rev-list -n 1 --before="2026-05-20 23:59" HEAD)
               
               if [ -n "$target_hash" ]; then
-                echo "找到 5月19日 历史节点: $target_hash，执行回退！"
+                echo "找到 5月20日 历史节点: $target_hash，执行回退！"
                 git checkout "$target_hash"
               else
                 echo "警告：未找到对应的历史节点！"
