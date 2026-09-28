@@ -15,17 +15,6 @@
 
 #
 
-
-# 高质量<付费>中转站
-
-点击链接加入群聊【IPQ技术讨论群】：https://qm.qq.com/q/v7nMhzB4oU
-该群为普通交流群。
-
-# 高质量<付费>中转站
-
-点击链接加入群聊【LiBwrt-Ai学习】：https://qm.qq.com/q/HTa7OiWNCU
-该群为AI中转站群。
-
 # OpenWRT-CI
 
 官方版：
@@ -75,4 +64,4 @@ Scripts——自定义脚本
 Config——自定义配置
 
 #
-[![Stargazers over time](https://starchart.cc/VIKINGYFY/OpenWRT-CI.svg?variant=adaptive)](https://starchart.cc/VIKINGYFY/OpenWRT-CI)
+
