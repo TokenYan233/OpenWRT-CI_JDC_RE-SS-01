@@ -73,9 +73,6 @@ jobs:
         run: |
           sudo -E apt -yqq purge firefox
           sudo -E apt -yqq update
-          sudo -E apt -yqq install nala
-          sudo nala fetch --auto -y
-
           sudo -E apt -yqq full-upgrade
           sudo -E apt -yqq autoremove --purge
           sudo -E apt -yqq autoclean
