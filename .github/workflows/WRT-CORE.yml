@@ -156,8 +156,8 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/packages
-          git fetch origin 595c308ab0a09f87e7259c6b8843c5c43b396c80
-          git checkout 595c308ab0a09f87e7259c6b8843c5c43b396c80 -- net/sing-box
+          git fetch origin ea73679057
+          git checkout ea73679057 -- net/sing-box
           cd ../..
           ./scripts/feeds update -i
 
