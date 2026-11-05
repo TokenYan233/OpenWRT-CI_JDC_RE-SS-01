@@ -20,9 +20,9 @@ if [ -d *"homeproxy"* ]; then
 	awk -F, '/^IP-CIDR,/{print $2 > "china_ip4.txt"} /^IP-CIDR6,/{print $2 > "china_ip6.txt"}' cncidr.txt
 	sed 's/^\.//g' direct.txt > china_list.txt ; sed 's/^\.//g' gfw.txt > gfw_list.txt
 	mv -f ./{china_*,gfw_list}.{ver,txt} ../$HP_PATH/resources/
+	curl -sL "https://github.com/TokenYan233/OpenWRT-CI_QCA_IPQ60WIFI/raw/refs/heads/master/direct_list.txt" -o ./$HP_PATH/resources/direct_list.txt
 
 	cd .. && rm -rf ./$HP_RULE/
-	curl -sL "https://github.com/TokenYan233/OpenWRT-CI_JDC_RE-SS-01/raw/refs/heads/master/direct_list.txt" -o ./$HP_PATH/resources/direct_list.txt
 	cd $PKG_PATH && echo "homeproxy date has been updated!"
 fi
 
