@@ -246,7 +246,11 @@ jobs:
 
             全系带开源硬件加速，别问了！
             (非最新编译,仅用于测试.只选kernel更新前编译)
+
+            VIKINGYFY immortalwrt:Commits on Oct 15, 2026
             f9b0ce7650fdcc7f4793256a3ae43c1132e2bc49
+            packages feed:Commits on Oct 10, 2026
+            25ad600a90980bed1ee76a212f9a5e42b499bb62
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}
