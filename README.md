@@ -13,19 +13,19 @@
 
 🎣 Compiled at a pre-update node with an older Linux Kernel.
 
-##### `Clone SHA from`
+🎰 `NSS Branches Clone＆checkout SHA from URL:`
 
->  base:`https://github.com/VIKINGYFY/immortalwrt/commits/main?author=VIKINGYFY`
+> base:`https://github.com/VIKINGYFY/immortalwrt/commits/main?author=VIKINGYFY`
 
->  luci:`https://github.com/immortalwrt/luci/commits?author=1715173329`
+> luci:`https://github.com/immortalwrt/luci/commits?author=1715173329`
 
->  feeds:`https://github.com/immortalwrt/packages/commits?author=1715173329`
+> feeds:`https://github.com/immortalwrt/packages/commits?author=1715173329`
 
->  hp:`https://github.com/immortalwrt/homeproxy/commits?author=1715173329`
+> hp:`https://github.com/immortalwrt/homeproxy/commits?author=1715173329`
 
->  theme:`https://github.com/eamonxg/luci-theme-aurora/commits?author=eamonxg`
+> theme:`https://github.com/eamonxg/luci-theme-aurora/commits?author=eamonxg`
 
->  config:`https://github.com/eamonxg/luci-app-aurora-config/commits?author=eamonxg`
+> config:`https://github.com/eamonxg/luci-app-aurora-config/commits?author=eamonxg`
 
 #
 
