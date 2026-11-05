@@ -155,10 +155,16 @@ jobs:
 
           ./scripts/feeds update -a
 
+          cd feeds/luci
+          git fetch origin b8be76edf8c40f6be96af723ab134ccaff3e2298
+          git checkout b8be76edf8c40f6be96af723ab134ccaff3e2298
+          cd ../..
+
           cd feeds/packages
           git fetch origin 24a9a53d20832534f67e148718c23e15ad8f841e
           git checkout 24a9a53d20832534f67e148718c23e15ad8f841e
           cd ../..
+
           ./scripts/feeds update -i
 
           ./scripts/feeds install -a
@@ -247,10 +253,8 @@ jobs:
             全系带开源硬件加速，别问了！
             (非最新编译,仅用于测试.只选kernel更新前编译)
 
+            Commits on Dec 2, 2025
             9c2f610049b82c5648aa8ebac939f000e90992bc
-            Commits on Dec 2, 2025
-            24a9a53d20832534f67e148718c23e15ad8f841e
-            Commits on Dec 2, 2025
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}
