@@ -30,8 +30,24 @@ UPDATE_PACKAGE() {
 		fi
 	done
 
-	# 克隆 GitHub 仓库
-	git clone --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
+	# 克隆 GitHub 仓库 并checkout特定SHA
+	declare -A LOCKED_HASHES=(
+		["homeproxy"]="4d035512071029dd151afb1089933928423038a2"
+		["aurora"]="94770722b7ba8bb20531bc8bce962b6b41191f3a"
+		["aurora-config"]="9b782f265cf233574eb199093d486fef9e14a859"
+	)
+
+	if [[ -n "${LOCKED_HASHES[$PKG_NAME]}" ]]; then
+		local TARGET_HASH="${LOCKED_HASHES[$PKG_NAME]}"
+		echo "Detected locked package: $PKG_NAME. Cloning and checking out hash: $TARGET_HASH"
+		# 先进行全量克隆，不指定分支
+		git clone "https://github.com/$PKG_REPO.git"
+		# 进入克隆下来的目录，检出特定的历史 Hash
+		git -C "$REPO_NAME" checkout "$TARGET_HASH"
+	else
+		# 普通插件，按原计划直接拉取最新指定分支
+		git clone --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
+	fi
 
 	# 处理克隆的仓库
 	if [[ "$PKG_SPECIAL" == "pkg" ]]; then
