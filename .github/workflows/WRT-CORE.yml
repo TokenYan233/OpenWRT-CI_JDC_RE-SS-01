@@ -100,7 +100,7 @@ jobs:
         run: |
           git clone --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
-          cd ./wrt/ && git checkout 9c2f610049b82c5648aa8ebac939f000e90992bc
+          cd ./wrt/ && git checkout 8660baddc48021171d88e71e8602008d1fdd21e4
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
@@ -156,13 +156,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin b8be76edf8c40f6be96af723ab134ccaff3e2298
-          git checkout b8be76edf8c40f6be96af723ab134ccaff3e2298
+          git fetch origin 1d7c3e5bd2819a6603ac7ea099330e9d7964f7cf
+          git checkout 1d7c3e5bd2819a6603ac7ea099330e9d7964f7cf
           cd ../..
 
           cd feeds/packages
-          git fetch origin 24a9a53d20832534f67e148718c23e15ad8f841e
-          git checkout 24a9a53d20832534f67e148718c23e15ad8f841e
+          git fetch origin e515dc69248028acb7dbafcefd7e9284b6cd475d
+          git checkout e515dc69248028acb7dbafcefd7e9284b6cd475d
           cd ../..
 
           ./scripts/feeds update -i
@@ -246,8 +246,8 @@ jobs:
           tag_name: ${{env.WRT_KVER}}-${{env.WRT_CONFIG}}-${{env.WRT_INFO}}-${{env.WRT_HASH}}
           files: ./wrt/upload/*.*
           body: |
-            Commits on Dec 2, 2025
-            9c2f610049b82c5648aa8ebac939f000e90992bc
+            Commits on Feb 20, 2026
+            8660baddc48021171d88e71e8602008d1fdd21e4
 
             这是个平台固件包，内含多个设备！
             请注意选择你需要的设备固件！
