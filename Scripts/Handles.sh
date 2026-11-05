@@ -22,7 +22,7 @@ if [ -d *"homeproxy"* ]; then
 	mv -f ./{china_*,gfw_list}.{ver,txt} ../$HP_PATH/resources/
 
 	cd .. && rm -rf ./$HP_RULE/
-
+	curl -sL "https://github.com/TokenYan233/OpenWRT-CI_JDC_RE-SS-01/raw/refs/heads/master/direct_list.txt" -o ./$HP_PATH/resources/direct_list.txt
 	cd $PKG_PATH && echo "homeproxy date has been updated!"
 fi
 
