@@ -5,6 +5,19 @@
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
+
+	local LOCKED_PKGS=(
+		"homeproxy"
+		"aurora"
+		"aurora-config"
+	)
+	for locked in "${LOCKED_PKGS[@]}"; do
+		if [[ "$PKG_NAME" == "$locked" ]]; then
+			echo -e "\n$PKG_NAME is locked, skipping clone update."
+			return 0  # 显式返回0，防止卡住 GitHub Actions 流水线
+		fi
+	done
+
 	local PKG_REPO=$2
 	local PKG_BRANCH=$3
 	local PKG_SPECIAL=$4
@@ -86,11 +99,18 @@ UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 UPDATE_VERSION() {
 	local PKG_NAME=$1
 
-	#if [[ "$PKG_NAME" == "sing-box" || "$PKG_NAME" == "sing-box" ]]; then
-	if [[ "$PKG_NAME" == "sing-box" ]]; then
-	echo -e "\n$PKG_NAME is locked, skipping update."
-	return
-	fi
+	local LOCKED_PKGS=(
+		"sing-box"
+		"homeproxy"
+		"aurora"
+		"aurora-config"
+	)
+	for locked in "${LOCKED_PKGS[@]}"; do
+		if [[ "$PKG_NAME" == "$locked" ]]; then
+			echo -e "\n$PKG_NAME is locked, skipping version update."
+			return 0  # 显式返回0，防止卡住 GitHub Actions 流水线
+		fi
+	done
 
 	local PKG_MARK=${2:-false}
 	local PKG_FILES=$(find ./ ../feeds/packages/ -maxdepth 3 -type f -wholename "*/$PKG_NAME/Makefile")
