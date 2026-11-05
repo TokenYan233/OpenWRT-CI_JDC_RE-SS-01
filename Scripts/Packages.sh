@@ -5,20 +5,6 @@
 #安装和更新软件包
 UPDATE_PACKAGE() {
 	local PKG_NAME=$1
-
-	local LOCKED_PKGS=(
-		"sing-box"
-		"homeproxy"
-		"aurora"
-		"aurora-config"
-	)
-	for locked in "${LOCKED_PKGS[@]}"; do
-		if [[ "$PKG_NAME" == "$locked" ]]; then
-			echo -e "\n$PKG_NAME is locked, skipping clone update."
-			return 0  # 显式返回0，防止卡住 GitHub Actions 流水线
-		fi
-	done
-
 	local PKG_REPO=$2
 	local PKG_BRANCH=$3
 	local PKG_SPECIAL=$4
