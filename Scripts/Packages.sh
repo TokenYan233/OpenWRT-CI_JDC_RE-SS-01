@@ -7,6 +7,7 @@ UPDATE_PACKAGE() {
 	local PKG_NAME=$1
 
 	local LOCKED_PKGS=(
+		"sing-box"
 		"homeproxy"
 		"aurora"
 		"aurora-config"
