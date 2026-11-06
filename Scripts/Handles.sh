@@ -29,7 +29,6 @@ fi
 #修改HomeProxy核心依赖为sing-box-tiny
 if [ -d *"homeproxy"* ]; then
 	echo " " && cd ./homeproxy/
-
 	# 替换核心依赖
 	sed -i 's/+sing-box \\/+sing-box-tiny \\/g' Makefile
 
