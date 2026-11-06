@@ -26,6 +26,16 @@ if [ -d *"homeproxy"* ]; then
 	cd $PKG_PATH && echo "homeproxy date has been updated!"
 fi
 
+#修改HomeProxy核心依赖为sing-box-tiny
+if [ -d *"homeproxy"* ]; then
+	echo " " && cd ./homeproxy/
+
+	# 替换核心依赖
+	sed -i 's/+sing-box \\/+sing-box-tiny \\/g' Makefile
+
+	cd $PKG_PATH && echo "homeproxy dependency has been fixed!"
+fi
+
 #修改argon主题字体和颜色
 if [ -d *"luci-theme-argon"* ]; then
 	echo " " && cd ./luci-theme-argon/
