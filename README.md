@@ -7,7 +7,7 @@
 
 🪟 Add vlmcsd LuCI app package.
 
-🚧 sing-box locked 1.12.xx skipping update.
+🚧 sing-box locked tiny 1.12.x skip update.
 
 🛖 HomeProxy uses the default ImmortalWrt package.
 
