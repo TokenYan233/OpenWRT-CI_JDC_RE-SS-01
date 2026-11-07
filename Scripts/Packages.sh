@@ -34,7 +34,7 @@ UPDATE_PACKAGE() {
 	declare -A LOCKED_HASHES=(
 		["homeproxy"]="ec92da1f6d395ed9d9866cf469a827e977f652f8"
 		["aurora"]="c43f8b4a424c2d7e31234003818715795974e060"
-		["aurora-config"]="3b15aa3bcb39da16378afdb0f8ce2fa139a48e5b"
+		["aurora-config"]="6c6b1dee66cddfa49ac0402dd7a5b5d93db4714f"
 	)
 
 	if [[ -n "${LOCKED_HASHES[$PKG_NAME]}" ]]; then
